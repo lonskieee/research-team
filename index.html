@@ -23,17 +23,21 @@
     body {
       background: linear-gradient(rgba(238, 244, 239, 0.375), rgb(238, 244, 239)), url('./haha.png') center/cover no-repeat;
       color: var(--text-main);
-      display: flex;
-      flex-direction: column;
       min-height: 100vh;
+      padding-bottom: 74px;
       overflow-x: hidden;
       overflow-y: auto;
     }
 
     .container {
       width: min(655px, calc(100% - 2rem));
-      height: min(560px, calc(100vh - 150px));
-      margin: auto auto clamp(1rem, 3vh, 2rem);
+      height: 560px;
+      max-height: calc(100vh - 2rem);
+      position: fixed;
+      top: calc(50% - 35px);
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin: 0;
       padding: clamp(1rem, 3vw, 2rem);
       background: rgba(255, 253, 242, 0.98);
       border: 2px solid var(--primary-color);
@@ -139,8 +143,9 @@
       width: 100%;
       padding: 0.6rem 1rem;
       font-size: clamp(0.7rem, 1.8vw, 0.95rem);
-      margin-top: 0;
-      flex-shrink: 0;
+      position: fixed;
+      bottom: 0;
+      left: 0;
     }
 
     footer img {
@@ -180,7 +185,6 @@
 
       .container {
         height: min(560px, calc(100vh - 120px));
-        margin: auto auto 1rem;
       }
 
       .team-image-container {
@@ -203,6 +207,63 @@
       footer {
         padding: 0.75rem;
         font-size: 0.8rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding-bottom: 66px;
+      }
+
+      .container {
+        width: calc(100% - 1.5rem);
+        height: auto;
+        max-height: calc(100vh - 6rem);
+        top: calc(50% - 30px);
+        padding: 1rem;
+      }
+
+      .icon-container {
+        width: 54px;
+        height: 54px;
+        min-width: 54px;
+        min-height: 54px;
+        flex-basis: 54px;
+        margin-bottom: 0.6rem;
+      }
+
+      .checkmark {
+        font-size: 2rem;
+      }
+
+      .subtext {
+        margin-bottom: 0.4rem;
+      }
+
+      .team-image-container {
+        height: 120px;
+        flex-basis: 120px;
+        margin-bottom: 0.25rem;
+      }
+
+      .leader {
+        margin-bottom: 0.5rem;
+        padding-bottom: 0;
+      }
+
+      .team-members li {
+        padding: 0.15rem 0;
+      }
+
+      footer {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.68rem;
+      }
+
+      footer img {
+        width: 42px;
+        height: 42px;
+        margin-right: 0.3rem;
       }
     }
   </style>
