@@ -25,16 +25,15 @@
       color: var(--text-main);
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      height: 100vh;
-      min-height: 0;
-      overflow: hidden;
+      min-height: 100vh;
+      overflow-x: hidden;
+      overflow-y: auto;
     }
 
     .container {
       width: min(655px, calc(100% - 2rem));
       height: min(560px, calc(100vh - 150px));
-      margin: 0 auto 70px;
+      margin: auto auto clamp(1rem, 3vh, 2rem);
       padding: clamp(1rem, 3vw, 2rem);
       background: rgba(255, 253, 242, 0.98);
       border: 2px solid var(--primary-color);
@@ -137,12 +136,11 @@
       background-color: var(--primary-color);
       color: #ffffff;
       text-align: center;
-      position: fixed;
-      bottom: 0;
       width: 100%;
       padding: 0.6rem 1rem;
       font-size: clamp(0.7rem, 1.8vw, 0.95rem);
       margin-top: 0;
+      flex-shrink: 0;
     }
 
     footer img {
@@ -182,7 +180,7 @@
 
       .container {
         height: min(560px, calc(100vh - 120px));
-        margin: 0 auto;
+        margin: auto auto 1rem;
       }
 
       .team-image-container {
